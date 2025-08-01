@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Execution Protocol | Turn Overthinking Into Output</title>
+    <meta name="description" content="The Execution Protocol is a proven 72-hour system that turns overthinking into output. Build and launch one revenue-generating asset — fast, clean, and complete.">
+
+    <link rel="icon" type="image/x-icon" href="https://d1yei2z3i6k35z.cloudfront.net/3574251/67f496efaff5d_favicon.ico">
+    <meta property="og:title" content="The Execution Protocol | Turn Overthinking Into Output">
+    <meta property="og:description" content="The proven 72-hour system that turns overthinking into a finished, revenue-generating asset. Built for creators, coaches, and freelancers.">
+    <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/c8d78e24-94f6-42df-aeb7-5a3d2ec16295.png?token=ZgqF0aC_DnVNUwZ5T85aeoG8_tMEZNwAQRMNrwJeJ-M&height=675&width=1200&expires=33280370132">
+    <meta property="og:url" content="https://finishmode.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="finishmode.com">
+    <meta property="twitter:url" content="https://finishmode.com">
+    <meta name="twitter:title" content="The Execution Protocol | Turn Overthinking Into Output">
+    <meta name="twitter:description" content="The proven 72-hour system that turns overthinking into a finished, revenue-generating asset. Built for creators, coaches, and freelancers.">
+    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/c8d78e24-94f6-42df-aeb7-5a3d2ec16295.png?token=ZgqF0aC_DnVNUwZ5T85aeoG8_tMEZNwAQRMNrwJeJ-M&height=675&width=1200&expires=33280370132">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #d1d5db; /* Default text color (gray-300) */
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Gradients */
+        .gradient-bg { background: linear-gradient(to right, #ff8c00, #ff6b00); }
+        .gradient-text { background: linear-gradient(to right, #ff8c00, #ff6b00); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        /* Button Hover */
+        .cta-button { transition: all 0.3s ease-in-out; }
+        .cta-button:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 15px 25px -5px rgba(255, 107, 0, 0.3), 0 8px 10px -6px rgba(255, 107, 0, 0.3); }
+        /* Card Hover */
+        .testimonial-card, .feature-card, .mini-testimonial-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .testimonial-card:hover, .feature-card:hover, .mini-testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+        /* Apply animation delays for staggered effect in hero */
+        .hero-section .main-headline { animation-delay: 0.2s; }
+        .hero-section .sub-headline { animation-delay: 0.4s; }
+        .hero-section .cta-button-animate { animation-delay: 0.8s; }
+
+
+        /* Exit Popup Styles */
+        #exitPopupOverlay { transition: opacity 0.3s ease-in-out; }
+        #exitPopupModal { transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
+        #exitPopupOverlay.popup-hidden { opacity: 0; pointer-events: none; }
+        #exitPopupModal.popup-hidden { opacity: 0; transform: scale(0.95); pointer-events: none; }
+        #exitPopupOverlay.popup-visible { opacity: 1; pointer-events: auto; }
+        #exitPopupModal.popup-visible { opacity: 1; transform: scale(1); pointer-events: auto; }
+
+        /* Styling for the Popup Button */
+        #exitPopupModal .popup-button {
+            display: inline-block; width: 100%; background-color: #ff8c00; color: #1a1a1a; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.5rem; line-height: 2rem; padding: 1rem 1.5rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: all 0.3s ease-in-out; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); text-transform: none;
+        }
+        #exitPopupModal .popup-button:hover { background-color: #ff6b00; transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 15px -3px rgba(255, 107, 0, 0.3), 0 4px 6px -4px rgba(255, 107, 0, 0.3); }
+        #exitPopupModal .popup-button:focus { outline: none; box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.4); }
+
+        /* Custom list style */
+        .custom-list li {
+            padding-left: 2rem; position: relative; margin-bottom: 0.75rem;
+        }
+        .custom-list li::before {
+            content: '🪦'; position: absolute; left: 0; top: 0.1em; font-size: 1.1em;
+        }
+        /* Style for checkmark list in "What Is" section */
+        .checkmark-list li {
+            padding-left: 2rem; position: relative; margin-bottom: 0.75rem;
+        }
+        .checkmark-list li::before {
+            content: '✅'; position: absolute; left: 0; top: 0.1em; font-size: 1.1em;
+        }
+
+        /* Custom style for the red X and WAIT */
+        .popup-stop-x {
+             color: #ff0040; font-size: 6rem; line-height: 1; font-weight: 900; margin-right: 0.75rem; display: inline-block; vertical-align: middle;
+        }
+         .popup-wait-text {
+             color: #ff0040; font-size: 3rem; line-height: 1; font-weight: 900; display: inline-block; vertical-align: middle; letter-spacing: 0.05em;
+         }
+    </style>
+</head>
+<body class="bg-[#1a1a1a] text-gray-300 antialiased">
+
+    <!-- Hero Section -->
+    <section class="hero-section relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1f1f1f] via-[#111] to-[#0a0a0a] opacity-80 transform -skew-y-3 scale-110 origin-top-left"></div>
+        <div class="relative container mx-auto px-6 max-w-5xl text-center z-10">
+            <!-- Headline Structure -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 leading-tight animate-fade-in main-headline">
+                How to Launch a Money-Making Offer <span class="gradient-text">This Week,</span> (Without Branding, Planning, or Second-Guessing)
+            </h1>  
+            </h2>
+             <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 animate-fade-in sub-headline" style="animation-delay: 0.6s;">
+                Skip the spiral. Use this 3-phase system to go from “almost ready” to live and earning... in one weekend.
+             </p>
+            <!-- End Headline Structure -->
+
+            <!-- CTA Button -->
+            <div class="mt-12 max-w-3xl mx-auto animate-fade-in cta-button-animate">
+                 <a href="https://blogprofitpath.systeme.io/checkout-finish-mode" class="cta-button block gradient-bg text-white font-extrabold py-5 px-6 rounded-lg text-2xl shadow-lg w-full transform hover:scale-[1.02]">
+                     Deploy The Execution Protocol → $27 Access Pass
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Is The Protocol Section -->
+    <section class="py-16 md:py-24 bg-[#1a1a1a]">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">What Is <span class="gradient-text">The Execution Protocol</span>?</h2>
+                <p class="text-xl md:text-2xl text-gray-100 font-semibold mb-6">
+                    The Execution Protocol isn’t a mindset shift. It’s a tactical 3-phase system engineered to snap overthinkers into motion and produce a finished asset in 72 hours — flat.
+                </p>
+                <p class="text-base text-gray-400 max-w-2xl mx-auto">
+                    Works for affiliate offers, coaching packages, digital products, client services, or any half-finished project you’ve been ‘almost ready’ to launch.
+                </p>
+            </div>
+            <!-- Protocol Diagram -->
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 text-center">
+                <!-- Phase 1 -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg border border-gray-700 flex-1">
+                    <p class="text-sm font-semibold text-gray-400">PHASE 1</p>
+                    <p class="text-lg font-bold text-white mt-1">Identify the Asset</p>
+                    <p class="text-sm text-gray-400 mt-2">→ What’s worth finishing? Decide fast. Kill the rest.</p>
+                </div>
+                <!-- Arrow -->
+                <div class="text-2xl text-gray-500 transform rotate-90 md:rotate-0">→</div>
+                <!-- Phase 2 -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg border border-gray-700 flex-1">
+                    <p class="text-sm font-semibold text-gray-400">PHASE 2</p>
+                    <p class="text-lg font-bold text-white mt-1">Build with Constraints</p>
+                    <p class="text-sm text-gray-400 mt-2">→ Perfection kills progress. Boundaries build speed.</p>
+                </div>
+                 <!-- Arrow -->
+                <div class="text-2xl text-gray-500 transform rotate-90 md:rotate-0">→</div>
+                <!-- Phase 3 -->
+                <div class="bg-[#2a2a2a] p-6 rounded-lg border border-gray-700 flex-1">
+                    <p class="text-sm font-semibold text-gray-400">PHASE 3</p>
+                    <p class="text-lg font-bold text-white mt-1">Deploy + Lock the Loop</p>
+                    <p class="text-sm text-gray-400 mt-2">→ Launch. Learn. Repeat. Stack execution wins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="py-16 md:py-24 bg-[#2a2a2a]">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Here’s What You Unlock Inside The Execution Protocol</h2>
+            <p class="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+                <span class="font-bold text-white">You get:</span> a short, focused video course + done-for-you templates + easy checklists that walk you through the system.
+            </p>
+            <p class="text-base text-gray-400">
+                Designed for busy people — works in 30–60 minute work blocks, no matter how packed your day is.
+            </p>
+        </div>
+    </section>
+
+    <!-- What This Isn't Section -->
+    <section class="py-16 md:py-20 bg-[#1a1a1a]">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let’s get this straight.</h2>
+                 <p class="text-lg md:text-xl text-gray-300">This is NOT:</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+                 <div class="bg-[#333] p-6 rounded-lg border border-red-500 shadow-md">
+                     <p class="flex items-center text-red-300"><span class="text-2xl mr-3 font-bold">❌</span> A bloated 60-hour course you’ll abandon.</p>
+                 </div>
+                 <div class="bg-[#333] p-6 rounded-lg border border-red-500 shadow-md">
+                     <p class="flex items-center text-red-300"><span class="text-2xl mr-3 font-bold">❌</span> Another info-dump you binge-watch at 2 a.m.</p>
+                 </div>
+                 <div class="bg-[#333] p-6 rounded-lg border border-red-500 shadow-md">
+                     <p class="flex items-center text-red-300"><span class="text-2xl mr-3 font-bold">❌</span> A dopamine hit disguised as “clarity.”</p>
+                 </div>
+                 <div class="bg-[#333] p-6 rounded-lg border border-red-500 shadow-md">
+                     <p class="flex items-center text-red-300"><span class="text-2xl mr-3 font-bold">❌</span> YouTube fluff repackaged into a paid product.</p>
+                 </div>
+                 <div class="bg-red-900/50 border-2 border-red-600 p-6 rounded-lg md:col-span-2 text-center shadow-lg">
+                     <p class="flex items-center justify-center text-red-200 font-semibold"><span class="text-3xl mr-3">🚫</span> And it’s definitely not for people happy to stay in “potential” forever.</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-[#1a1a1a]">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center">Proof The Protocol Works...</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-[#2a2a2a] p-8 rounded-xl shadow-xl border border-gray-700 flex flex-col testimonial-card text-center">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/3574251/67f496efaff5d_Untitleddesign19.png" alt="Dave Barry" class="w-20 h-20 rounded-full border-2 border-gray-600 mx-auto mb-6 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/80x80/2a2a2a/ffffff?text=DB';this.classList.add('p-1');">
+                    <span class="text-5xl text-[#ff8c00] -mt-4 mb-4 block">“</span>
+                    <blockquote class="text-gray-300 italic text-lg mb-6 flex-grow text-left"><b>“First protocol I actually finished.”</b><br> I’ve bought a ridiculous number of courses, but this is the first one I actually finished... The protocol isn’t motivational fluff. It’s a system that works the way my brain works.</blockquote>
+                    <div class="mt-auto pt-4 border-t border-gray-700">
+                        <p class="font-semibold text-white">Dave Barry</p>
+                        <p class="text-sm text-gray-400 mt-1">Accountant, Schwartz & Co.</p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 (Featured) -->
+                <div class="bg-[#2a2a2a] p-8 rounded-xl shadow-2xl border border-[#ff8c00] flex flex-col testimonial-card transform md:scale-105 md:z-10 text-center">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/3574251/67f4970574d72_Untitleddesign18.png" alt="Lisa Roker" class="w-20 h-20 rounded-full border-2 border-gray-600 mx-auto mb-6 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/80x80/2a2a2a/ffffff?text=LR';this.classList.add('p-1');">
+                    <span class="text-5xl text-[#ff8c00] -mt-4 mb-4 block">“</span>
+                    <blockquote class="text-gray-300 italic text-lg mb-6 flex-grow text-left"><b>"I built and launched my first asset in under 48 hours."</b><br> No branding. No spiral. Just clarity and execution. The protocol's walkthrough and soft scripts made it simple to ship an asset that actually makes money.</blockquote>
+                    <div class="mt-auto pt-4 border-t border-gray-700">
+                        <p class="font-semibold text-white">Lisa Roker</p>
+                        <p class="text-sm text-gray-400 mt-1">Blogger, LR Content </p>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-[#2a2a2a] p-8 rounded-xl shadow-xl border border-gray-700 flex flex-col testimonial-card text-center">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/3574251/67f49fceb9875_Untitleddesign21.png" alt="Emeka Nwoke" class="w-20 h-20 rounded-full border-2 border-gray-600 mx-auto mb-6 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/80x80/2a2a2a/ffffff?text=EN';this.classList.add('p-1');">
+                    <span class="text-5xl text-[#ff8c00] -mt-4 mb-4 block">“</span>
+                    <blockquote class="text-gray-300 italic text-lg mb-6 flex-grow text-left"><b>“Finally out of ‘almost.’ No reinvention needed.”</b><br> I’ve been stuck in ‘almost’ for years. The Execution Protocol gave me a way out. The 'Pick One' method and the Momentum Loop shifted everything. It’s not about motivation. It’s about movement and output.</blockquote>
+                    <div class="mt-auto pt-4 border-t border-gray-700">
+                        <p class="font-semibold text-white">Emeka Nwoke</p>
+                        <p class="text-sm text-gray-400 mt-1">Entrepreneur, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses Section -->
+    <section class="py-16 md:py-24 bg-zinc-800">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">🧠 Execution Boosters Included</h2>
+                <p class="text-lg text-gray-400">(These aren’t “bonuses.” They’re what make the protocol deadly efficient.)</p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-[#2a2a2a] p-8 rounded-lg shadow-lg border border-gray-700">
+                <ul class="space-y-4 text-lg">
+                    <li class="flex justify-between items-center"><span class="text-gray-300">The Execution Vault</span><span class="font-semibold text-gray-500 line-through">$197</span></li>
+                    <li class="flex justify-between items-center"><span class="text-gray-300">Launch Templates</span><span class="font-semibold text-gray-500 line-through">$97</span></li>
+                    <li class="flex justify-between items-center"><span class="text-gray-300">Notion Operating System</span><span class="font-semibold text-gray-500 line-through">$77</span></li>
+                    <li class="flex justify-between items-center"><span class="text-gray-300">The Anti-Hype Pitch Guide</span><span class="font-semibold text-gray-500 line-through">$47</span></li>
+                </ul>
+                <hr class="border-gray-600 my-4">
+                <div class="flex justify-between items-center text-xl">
+                    <span class="font-bold text-white">Total Value:</span>
+                    <span class="font-bold text-white">$418</span>
+                </div>
+                 <p class="text-center mt-4 text-base font-semibold text-gray-300">Included with your install of <span class="gradient-text">The Execution Protocol</span>.</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Bonuses Section -->
+
+    <!-- Who Am I Section -->
+    <section class="py-16 md:py-24 bg-[#2a2a2a] border-t border-gray-700">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="md:flex md:items-center md:space-x-12 bg-[#333] p-10 rounded-xl shadow-lg">
+                <div class="md:w-1/3 text-center mb-8 md:mb-0 flex-shrink-0">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/3574251/67edd10f7b211_whoisciarandoyle.png" alt="Ciaran - Founder of The Execution Protocol" class="rounded-full mx-auto shadow-lg w-40 h-40 md:w-48 md:h-48 object-cover border-4 border-[#ff8c00]" onerror="this.onerror=null;this.src='https://placehold.co/192x192/333/ffffff?text=Ciaran';this.classList.add('p-1');">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-3xl font-bold text-white mb-4">Who Am I?</h3>
+                    <p class="text-2xl font-semibold text-[#ff8c00] mb-4">No More Guesswork. No More Half-Built Ideas.</p>
+                    <p class="text-lg text-gray-300 mb-4 leading-relaxed">I'm Ciaran. I spent five years chasing tactics, half-building systems, and convincing myself I was “almost ready.” I wasn’t lazy. I was just buried under bullshit advice and other people’s blueprints.</p>
+                    <p class="text-lg text-gray-300 mb-4 leading-relaxed">Now I build systems that produce output. I help overthinkers like you execute on one simple asset that earns... and finally step out of potential into reality.</p>
+                    <p class="text-lg text-gray-100 font-semibold">No guru tricks. No fake hype. Just a protocol for momentum, built in your voice, on your terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 md:py-24 bg-[#1a1a1a]">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">This Protocol Was Originally Priced at $97</h2>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8">You Get It Today for <span class="gradient-text font-bold">$27</span>. Here's Why:</p>
+
+            <div class="text-lg text-gray-300 space-y-4 max-w-2xl mx-auto text-left md:text-center leading-relaxed mb-10">
+                <p>When I first built The Execution Protocol, I priced it at $97 — because that's what it's worth. It’s a complete, repeatable system to go from mental clutter to finished asset in 72 hours.</p>
+                <p>But here’s the truth: I want more people in the field using it, testing it, proving it works outside my head.</p>
+                <p class="font-semibold text-white">So for a limited time, I’m offering full access for $27. Not forever. Just long enough to flood the system with real proof. If you’re the kind of person who wants to move — move now.</p>
+            </div>
+
+            <!-- Price Visual -->
+            <div class="bg-[#2a2a2a] border border-gray-700 rounded-lg p-6 max-w-md mx-auto mb-8">
+                <div class="flex justify-center items-center space-x-4">
+                    <div class="text-center">
+                        <p class="text-lg text-gray-500">WAS</p>
+                        <p class="text-4xl font-bold text-gray-500 line-through">$97</p>
+                    </div>
+                    <div class="text-2xl text-gray-600">→</div>
+                    <div class="text-center">
+                        <p class="text-lg gradient-text font-semibold">NOW</p>
+                        <p class="text-4xl font-bold text-white">$27</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400 mt-4">Full system. Full access.<br>Limited-time rollout pricing.</p>
+            </div>
+
+            <a href="https://blogprofitpath.systeme.io/checkout-finish-mode" class="cta-button inline-block gradient-bg text-white font-bold py-5 px-12 rounded-lg text-xl shadow-xl transform hover:scale-105 mb-4">
+                Deploy The Execution Protocol → $27 Access Pass
+            </a>
+            <p class="text-sm text-gray-500">
+                Price returns to $97 once the first wave of builders ship.
+            </p>
+        </div>
+    </section>
+    <!-- End Pricing Section -->
+
+
+    <!-- Final CTA Section -->
+    <section id="cta" class="py-20 md:py-32 bg-[#1a1a1a]">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Ready to Stop Spinning & Start Executing?
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10">
+                Stop spinning. Execute with precision. Install the protocol.
+            </p>
+             <p class="text-base text-gray-400 italic mb-4">
+                 If the system doesn’t help you finish one asset in 72 hours — you didn’t deploy it.<br>But if you try, and it falls flat, email me. You’ll get something better. Promise.
+             </p>
+            <a href="https://blogprofitpath.systeme.io/checkout-finish-mode" class="cta-button inline-block gradient-bg text-white font-bold py-5 px-12 rounded-lg text-xl shadow-xl transform hover:scale-105 mb-6">
+                Deploy The Execution Protocol → $27 Access Pass
+            </a>
+             <p class="text-base font-semibold text-gray-400">
+                 Still undecided? That’s a pattern. Break it with action.
+             </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#1a1a1a] text-gray-400 border-t border-gray-700">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4"><span class="text-[#ff8c00]">🔗</span> <span class="text-gray-400">Not ready to buy yet?</span> Bookmark or send this to a fellow overthinker who never finishes things. They’ll thank you later.</p>
+            <p class="text-lg font-semibold text-gray-300 mb-6">No hype. No bullshit.<br> Just one protocol, one path, and the clarity to finally execute.</p>
+            <p class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> The Execution Protocol. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Exit Popup (Static representation for preview) -->
+    <div id="exitPopupOverlay" class="popup-hidden fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm p-4">
+        <div id="exitPopupModal" role="dialog" aria-modal="true" aria-labelledby="exitPopupHeadline" class="popup-hidden relative w-full max-w-lg bg-[#1a1a1a] text-gray-300 rounded-xl shadow-2xl p-8 border border-slate-700">
+            <button id="exitPopupClose" aria-label="Close popup" class="absolute top-3 right-3 text-slate-400 hover:text-white transition-colors z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-center">
+                <div class="mb-4">
+                    <span class="popup-stop-x">×</span>
+                    <span class="popup-wait-text">WAIT</span>
+                </div>
+                <h2 id="exitPopupHeadline" class="text-2xl font-bold text-white mb-3">What If You’re Fixing the Wrong Problem?</h2>
+                <p class="text-base text-slate-300 mb-4">Before you bail…</p>
+                <p class="text-base text-slate-300 mb-4">Most people don’t quit because they’re lazy.<br>They quit because they’re blind to <span class="font-semibold text-white">one hidden pattern.</span></p>
+                 <div class="bg-zinc-800 p-6 rounded-lg border border-zinc-700 mt-6">
+                      <h3 class="text-xl font-semibold text-white mb-4">
+                           Find Your Execution Blocker
+                      </h3>
+                     <p class="text-base text-slate-300 mb-6">Take 6 quick questions →<br>Uncover the real pattern tripping you up,<br>and the exact move to break it.</p>
+                     <a href="#" target="https://blogprofitpath.systeme.io/checkout-finish-mode"
+                        class="popup-button inline-block w-full md:w-auto">
+                        Reveal My Blocker →
+                     </a>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Exit Intent Popup Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('exitPopupOverlay');
+            const modal = document.getElementById('exitPopupModal');
+            const closeButton = document.getElementById('exitPopupClose');
+            const sessionKey = 'finishModePopupShown';
+
+            // Function to show the popup
+            const showPopup = () => {
+                if (sessionStorage.getItem(sessionKey) !== 'true') {
+                    overlay.classList.remove('popup-hidden');
+                    overlay.classList.add('popup-visible');
+                    modal.classList.remove('popup-hidden');
+                    modal.classList.add('popup-visible');
+                    sessionStorage.setItem(sessionKey, 'true');
+                }
+            };
+
+            // Function to hide the popup
+            const hidePopup = () => {
+                overlay.classList.add('popup-hidden');
+                overlay.classList.remove('popup-visible');
+                modal.classList.add('popup-hidden');
+                modal.classList.remove('popup-visible');
+            };
+
+            let exitIntentTimer;
+            // Show popup on mouseout (attempting to leave viewport)
+            document.addEventListener('mouseout', (e) => {
+                if (sessionStorage.getItem(sessionKey) === 'true' || e.relatedTarget !== null) { return; }
+                // Show if mouse is near the top of the viewport
+                if (e.clientY <= 5) {
+                    clearTimeout(exitIntentTimer);
+                    exitIntentTimer = setTimeout(showPopup, 200);
+                }
+            }, { passive: true });
+            
+            // --- For demonstration purposes, let's also show it after a delay ---
+            setTimeout(() => {
+                // We only show it automatically if it hasn't been shown by exit intent yet.
+                if (overlay.classList.contains('popup-hidden')) {
+                   // showPopup(); // Uncomment to have the popup appear automatically for testing
+                }
+            }, 15000); // Show after 15 seconds
+
+
+            // Event listeners for closing the popup
+            if (closeButton) { closeButton.addEventListener('click', hidePopup); }
+            if (overlay) { overlay.addEventListener('click', (e) => { if (e.target === overlay) { hidePopup(); } }); }
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('popup-visible')) { hidePopup(); } });
+        });
+    </script>
+
+</body>
+</html>
